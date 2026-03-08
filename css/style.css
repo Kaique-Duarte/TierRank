@@ -16,7 +16,9 @@ img {
 .dropzone{
   height: 5.5rem;
   padding: 0.2rem;
+  display: flex;
   gap: 0.2rem;
+  border: solid black;
 
 }
 
