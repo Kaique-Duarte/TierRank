@@ -1,0 +1,26 @@
+{
+  "name": "codigo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run back\" \"npm run front\"",
+    "back": "node --watch ./backend/server.js",
+    "front": "live-server --port=3000 ./frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaique-Duarte/TierRank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Kaique-Duarte/TierRank/issues"
+  },
+  "homepage": "https://github.com/Kaique-Duarte/TierRank#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
