@@ -7,8 +7,20 @@
     <script src="../scripts/routes.js" defer></script>
   </head>
   <body>
+    <style>
+      .dropzone{ 
+        border: 1px solid black;
+        display: flex;
+        height: 3rem;
+      }
+      .itens{
+        border: 1px solid black;
+        display: flex;
+        height: 7rem;
+      }
+    </style>
     <header>
-      <h1>TierRank</h1>
+      <h1 class="Titulo">TierRank</h1>
     </header>
     <main>
       <section class="controls">
@@ -16,14 +28,17 @@
         <button id="export-btn">Exportar</button>
         <button id="new-btn">Novo</button>
       </section>
-      <section class="items">
-        <div class="item">Test1</div>
-        <div class="item">Test2</div>
-        <div class="item">Test3</div>
-        <div class="item">Test4</div>
-        <div class="item">Test5</div>
+      <section class="tierlist">
+        <div class="dropzone"><span>S</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>A</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>B</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>C</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>D</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>E</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>F</span><div><button>⬆️</button><button>⬇️</button></div></div>
       </section>
-      <div class="item">itens</div>
+      <input type="file">
+      <div class="itens">itens</div>
     </main>
   </body>
 </html>
