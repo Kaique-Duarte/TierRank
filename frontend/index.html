@@ -6,13 +6,39 @@
     <title>TierRank</title>
     <script src="../scripts/routes.js" defer></script>
   </head>
-  <style></style>
   <body>
+    <style>
+      .dropzone{ 
+        border: 1px solid black;
+        display: flex;
+        height: 3rem;
+      }
+      .itens{
+        border: 1px solid black;
+        display: flex;
+        height: 7rem;
+      }
+    </style>
     <header>
-      <h1>Tier rank</h1>
+      <h1 class="Titulo">TierRank</h1>
     </header>
-    <div>
-      <button onclick="redirect('/catalog')">Ver Catálogo</button>
-    </div>
+    <main>
+      <section class="controls">
+        <input type="file" id="file-input" />
+        <button id="export-btn">Exportar</button>
+        <button id="new-btn">Novo</button>
+      </section>
+      <section class="tierlist">
+        <div class="dropzone"><span>S</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>A</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>B</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>C</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>D</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>E</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone"><span>F</span><div><button>⬆️</button><button>⬇️</button></div></div>
+      </section>
+      <input type="file">
+      <div class="itens">itens</div>
+    </main>
   </body>
 </html>
