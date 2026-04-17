@@ -4,19 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TierRank</title>
-    <script src="../scripts/routes.js" defer></script>
+    <link
+      rel="shortcut icon"
+      href="images/favcon/android-chrome-512x512.png"
+      type="image/x-icon"
+    />
+    <script src="/scripts/tier.js" defer></script>
   </head>
   <body>
     <style>
-      .dropzone{ 
-        border: 1px solid black;
+      .tierName {
         display: flex;
-        height: 3rem;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        min-height: 4rem;
+        max-width: 4rem;
+        min-width: 4rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
       }
-      .itens{
+
+      .dropzone {
+        display: flex;
+        border: 1px solid black;
+        min-height: 3rem;
+      }
+      .dropzone--itens {
+        min-height: 10rem;
+      }
+      .itens {
         border: 1px solid black;
         display: flex;
         height: 7rem;
+      }
+      img {
+        width: 4rem;
+        min-width: 7rem;
       }
     </style>
     <header>
@@ -29,16 +53,39 @@
         <button id="new-btn">Novo</button>
       </section>
       <section class="tierlist">
-        <div class="dropzone"><span>S</span><div><button>⬆️</button><button>⬇️</button></div></div>
-        <div class="dropzone"><span>A</span><div><button>⬆️</button><button>⬇️</button></div></div>
-        <div class="dropzone"><span>B</span><div><button>⬆️</button><button>⬇️</button></div></div>
-        <div class="dropzone"><span>C</span><div><button>⬆️</button><button>⬇️</button></div></div>
-        <div class="dropzone"><span>D</span><div><button>⬆️</button><button>⬇️</button></div></div>
-        <div class="dropzone"><span>E</span><div><button>⬆️</button><button>⬇️</button></div></div>
-        <div class="dropzone"><span>F</span><div><button>⬆️</button><button>⬇️</button></div></div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">S</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">A</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">B</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">C</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">D</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">E</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
+        <div class="dropzone">
+          <span contenteditable="true" class="tierName">F</span>
+          <div><button>⬆️</button><button>⬇️</button></div>
+        </div>
       </section>
-      <input type="file">
-      <div class="itens">itens</div>
+      <input type="file" />
+      <div class="dropzone dropzone--itens">
+        <span> itens </span>
+      </div>
     </main>
   </body>
 </html>
