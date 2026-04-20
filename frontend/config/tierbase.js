@@ -1,3 +1,4 @@
+//aki tem a parte da tier list padrao
 export const defaultState = {
   tiers: [
     {
