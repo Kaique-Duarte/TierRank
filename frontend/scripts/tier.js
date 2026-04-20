@@ -19,6 +19,8 @@ targets.forEach((target) => {
   });
   //o evento drop é acionado quando o usuário solta o elemento em um target
   target.addEventListener("drop", (e) => {
+    
+    
     if (e.target.tagName == "DIV"){
       console.log("DIV")
       target.appendChild(dragElement);
@@ -39,6 +41,7 @@ targets.forEach((target) => {
         console.log("POS2: ", position, "OFFset: ",  e.clientX)
       }
     }
+    //chamar função de salvar
   });
 });
 
