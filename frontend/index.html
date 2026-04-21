@@ -9,9 +9,9 @@
       href="images/favcon/android-chrome-512x512.png"
       type="image/x-icon"
     />
-    <script src="scripts/tier.js" defer></script>
-    <script src="scripts/ranks.js" defer></script>
     <script type="module" src="config/render.js" defer></script>
+    <script type="module" src="scripts/tier.js" defer></script>
+    <script src="scripts/ranks.js" defer></script>
   </head>
   <body>
     <style>
@@ -54,14 +54,14 @@
         <button id="export-btn">Exportar</button>
         <button id="new-btn">Novo</button>
       </section>
-      <section class="tierlist">
-      
-        
-      </section>
+      <section class="tierlist"></section>
       <button id="addrank">+</button>
       <input type="file" />
-      <div class="dropzone dropzone--itens">
+      <div class="itens">
         <span> itens </span>
+        <div draggable="true" class="dropitem">
+          <img src="images/TierRank1/jaca.jpeg" alt="" />
+        </div>
       </div>
     </main>
   </body>
