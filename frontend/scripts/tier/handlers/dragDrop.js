@@ -1,11 +1,10 @@
-import { state } from "../config/tierbase.js";
-import { saveTier } from "../config/storage.js";
-import { render } from "../config/render.js"
+import { saveTier } from "../../../config/storage.js"
+
 const tierBlocks = document.querySelectorAll(".dropitem");
 let dragElement = null;
 //targets são as divs onde o elemento pode ser dropado.
 const targets = document.querySelectorAll(".dropzone");
-console.log(targets)
+
 //O evento dragstart é acionado quando o usuário começa a arrastar um elemento
 tierBlocks.forEach((tierBlock) => {
   
@@ -22,10 +21,10 @@ targets.forEach((target) => {
   });
   //o evento drop é acionado quando o usuário solta o elemento em um target
   target.addEventListener("drop", (e) => {
-    console.log(target)
+    
     // aki verifica se o drop foi em uma div
     if (e.target.tagName == "DIV"){
-      console.log("DIV")
+      
       target.appendChild(dragElement);
     }
     //aki verifica se o drop foi em uma imagem
@@ -35,7 +34,7 @@ targets.forEach((target) => {
       const rect = img.getBoundingClientRect()
       const position = (rect.right + rect.left) / 2
       
-     console.log(rect)
+     
      //esse dois IFs concecutivos fazem logica de dropar o item no meio de outros dois itens   
      if (position < e.clientX){
         target.insertBefore(dragElement, parent.nextElementSibling)
@@ -47,10 +46,8 @@ targets.forEach((target) => {
       }
     }
     // essa parte depois do drop salva o estado atual e manda pro local storage
-    state.tiers = saveTier()
-    localStorage.setItem('tier', JSON.stringify(state.tiers))
+    saveTier()
     
 
   });
 });
-
