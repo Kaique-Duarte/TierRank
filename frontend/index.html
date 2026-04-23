@@ -9,9 +9,8 @@
       href="images/favcon/android-chrome-512x512.png"
       type="image/x-icon"
     />
-    <script src="scripts/tier.js" defer></script>
-    <script src="scripts/ranks.js" defer></script>
-    <script src="scripts/removerank.js" defer></script>
+    <script type="module" src="config/render.js"> </script>
+    <script type="module" src="scripts/tier/index.js" defer></script>
   </head>
   <body>
     <style>
@@ -55,38 +54,11 @@
         <button id="new-btn">Novo</button>
       </section>
       <section class="tierlist">
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">S</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">A</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">B</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">C</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">D</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">E</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
-        <div class="dropzone">
-          <span contenteditable="true" class="tierName">F</span>
-          <div><button>⬆️</button><button>⬇️</button><button class="removerank">❌</button></div>
-        </div>
+       
       </section>
       <button id="addrank">+</button>
       <input type="file" />
-      <div class="dropzone dropzone--itens">
+      <div class="itens">
         <span> itens </span>
       </div>
     </main>

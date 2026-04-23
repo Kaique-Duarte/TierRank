@@ -22,8 +22,8 @@ export function render(state) {
       const divBtn = document.createElement("div");
       const botoes = [
         { text: "Cima", classe: "btn-up" },
-
         { text: "baixo", classe: "btn-down" },
+        { text: "Delete", classe: "removerank"},
       ];
       //aqui cria dois botoes com classes diferentes
       botoes.forEach((botao) => {

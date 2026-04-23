@@ -2,7 +2,7 @@ import { state, defaultState } from "./tierbase.js"
 //nessa função ela ve se tem algo de tier list no local storage do navegador, se tiver ela usa se não tiver ela cria com um tier list padrão
 export function syncStorage(){
     let saved = localStorage.getItem('tier')  
-  console.log(state, defaultState)
+  
   if (saved){
     try {
         state.tiers = JSON.parse(saved)
@@ -19,9 +19,9 @@ export function saveTier(){
     
     const tierlist = document.querySelector('.tierlist')
     const ranks = Array.from(tierlist.children)
-    console.log(ranks)
     
-    return  ranks.map((rank, index)=>{
+    
+    state.tiers = ranks.map((rank, index)=>{
         
         const name = rank.querySelector('.tierName').textContent
         
@@ -35,7 +35,7 @@ export function saveTier(){
             items: []
         }
     })
-    
+      localStorage.setItem('tier', JSON.stringify(state.tiers))
    /*  tiers: [
     {
       id: "tier-s",

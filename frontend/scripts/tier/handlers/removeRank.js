@@ -1,3 +1,4 @@
+import { saveTier } from "../../../config/storage.js"
 document.querySelector(".tierlist").addEventListener("click", (e) => {
     if (e.target.classList.contains("removerank")) {
         const confirmado = window.confirm("Tem certeza que deseja deletar esta tier?")
@@ -5,6 +6,7 @@ document.querySelector(".tierlist").addEventListener("click", (e) => {
             const tierRow = e.target.closest(".dropzone")
             if (tierRow) {
                 tierRow.remove()
+                saveTier()
             }
         }
     }
