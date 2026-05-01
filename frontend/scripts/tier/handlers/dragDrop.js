@@ -2,7 +2,7 @@ import { saveTier } from "../../../config/storage.js"
 const zone = document.querySelector(".itens")
 const tierlist = document.querySelector(".tierlist")
 let dragElement = null;
-//targets são as divs onde o elemento pode ser dropado.
+
 const targets = document.querySelectorAll(".dropzone");
 
 document.addEventListener('dragstart', (e) => {
@@ -45,15 +45,4 @@ tierlist.addEventListener('drop', (e) => {
   } 
   saveTier()
 })
-  //o evento drop é acionado quando o usuário solta o elemento em um target
-  /*  target.addEventListener("drop", (e) => {
-    // aki verifica se o drop foi em uma div
-    if (e.target.tagName == "DIV"){
-      
-      target.appendChild(dragElement);
-    }
-    //aki verifica se o drop foi em uma imagem */
-    // essa parte depois do drop salva o estado atual e manda pro local storage
-   /*  saveTier()  */
-    
-
+  
