@@ -4,15 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TierRank</title>
-    <script src="../scripts/routes.js" defer></script>
+    <link
+      rel="shortcut icon"
+      href="images/favcon/android-chrome-512x512.png"
+      type="image/x-icon"
+    />
+    <script type="module" src="config/render.js"> </script>
+    <script type="module" src="scripts/tier/index.js" defer></script>
   </head>
-  <style></style>
   <body>
+    <style>
+      .tierName {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        min-height: 4rem;
+        max-width: 4rem;
+        min-width: 4rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .dropzone {
+        display: flex;
+        border: 1px solid black;
+        min-height: 3rem;
+      }
+      .dropzone--itens {
+        min-height: 10rem;
+      }
+      .itens {
+        border: 1px solid black;
+        display: flex;
+        height: 7rem;
+      }
+      img {
+        width: 4rem;
+        min-width: 7rem;
+      }
+    </style>
     <header>
-      <h1>Tier rank</h1>
+      <h1 class="Titulo">TierRank</h1>
     </header>
-    <div>
-      <button onclick="redirect('/catalog')">Ver Catálogo</button>
-    </div>
+    <main>
+      <section class="controls">
+        <input type="file" id="file-input" />
+        <button id="export-btn">Exportar</button>
+        <button id="new-btn">Novo</button>
+      </section>
+      <section class="tierlist">
+       
+      </section>
+      <button id="addrank">+</button>
+      <input class="images" type="file" accept="image/*"/>
+      <div class="itens">
+        <span> itens </span>
+        
+      </div>
+    </main>
   </body>
 </html>
