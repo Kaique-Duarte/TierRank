@@ -3,4 +3,3 @@ import "./handlers/dragDrop.js";
 import "./handlers/addRank.js";
 import "./handlers/removeRank.js";
 import "./observers/editableObserver.js";
-import "./handlers/sendImage.js";

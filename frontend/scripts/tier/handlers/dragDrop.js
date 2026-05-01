@@ -1,59 +1,53 @@
 import { saveTier } from "../../../config/storage.js"
-const zone = document.querySelector(".itens")
-const tierlist = document.querySelector(".tierlist")
+
+const tierBlocks = document.querySelectorAll(".dropitem");
 let dragElement = null;
 //targets são as divs onde o elemento pode ser dropado.
 const targets = document.querySelectorAll(".dropzone");
 
-document.addEventListener('dragstart', (e) => {
-  dragElement = e.target.closest(".dropitem")
-})
-zone.addEventListener("dragover", (e) => {
-  e.preventDefault()
-
-})
-zone.addEventListener('drop', (e) => {
-  zone.appendChild(dragElement)
-  console.log('drop')
-})
-
-tierlist.addEventListener("dragover", (e) => {
-  e.preventDefault()
-})
-tierlist.addEventListener('drop', (e) => {
-  const target = e.target // elemento onde o item foi dropado
-  const dropzone = target.closest(".dropzone") // pega a div dropzone mais próxima
+//O evento dragstart é acionado quando o usuário começa a arrastar um elemento
+tierBlocks.forEach((tierBlock) => {
   
-  if (!dropzone) return // se não encontrou dropzone, sai
-  
-  if (target.classList.contains("dropzone") && target.tagName == "DIV"){
-    target.appendChild(dragElement)
-  }
-  
-  if (target.tagName == "IMG"){
-    const img = target // item
-    const parent = img.parentElement
-    const rect = img.getBoundingClientRect()
-    const position = (rect.right + rect.left) / 2
+  tierBlock.addEventListener("dragstart", (e) => {
+    dragElement = e.currentTarget;
     
-    if (position < e.clientX){
-      dropzone.insertBefore(dragElement, parent.nextElementSibling)
-    }
-    if (position > e.clientX){
-      dropzone.insertBefore(dragElement, parent)
-    }
-  } 
-  saveTier()
-})
+  });
+});
+//O evento dragover é necessário para permitir que o elemento seja dropado no target.
+targets.forEach((target) => {
+  target.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    
+  });
   //o evento drop é acionado quando o usuário solta o elemento em um target
-  /*  target.addEventListener("drop", (e) => {
+  target.addEventListener("drop", (e) => {
+    
     // aki verifica se o drop foi em uma div
     if (e.target.tagName == "DIV"){
       
       target.appendChild(dragElement);
     }
-    //aki verifica se o drop foi em uma imagem */
+    //aki verifica se o drop foi em uma imagem
+    if (e.target.tagName == "IMG"){
+      const img = e.target// item
+      const parent = img.parentElement
+      const rect = img.getBoundingClientRect()
+      const position = (rect.right + rect.left) / 2
+      
+     
+     //esse dois IFs concecutivos fazem logica de dropar o item no meio de outros dois itens   
+     if (position < e.clientX){
+        target.insertBefore(dragElement, parent.nextElementSibling)
+        console.log("POS1: ", position,"OFFset: ", e.clientX)
+      }
+      if (position > e.clientX){
+        target.insertBefore(dragElement, parent)
+        console.log("POS2: ", position, "OFFset: ",  e.clientX)
+      }
+    }
     // essa parte depois do drop salva o estado atual e manda pro local storage
-   /*  saveTier()  */
+    saveTier()
     
 
+  });
+});
