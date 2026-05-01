@@ -1,6 +1,6 @@
 import { saveTier } from "../../../config/storage.js"
-const zone = document.querySelector(".itens")
-const tierlist = document.querySelector(".tierlist")
+
+const tierBlocks = document.querySelectorAll(".dropitem");
 let dragElement = null;
 
 const targets = document.querySelectorAll(".dropzone");
